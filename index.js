@@ -41,7 +41,8 @@ app.command("/scaslack-help", async ({ ack, respond }) => {
 /scaslack-ping - Check bot latency
 /scaslack-catfact - Get a cat fact
 /scaslack-joke - Get a random joke
-/scaslack-weather [city] - Get weather information for a specified city`
+/scaslack-weather [city] - Get weather information for a specified city
+/scaslack-waifu [character] - Get a waifu image (character is optional if not provided, a random waifu will be returned, \n be aware that some character are not available because they don not have a tag in the waifu.im API)`
   });
 });
 
@@ -59,7 +60,7 @@ app.command("/scaslack-catfact", async ({ ack, respond }) => {
     );
 
     await respond({
-      text: `Cat Fact:\n${response.data.fact}`
+      text: `Cat Fact:\n${response.data.fact}🙀`
     });
 
   } catch (err) {
@@ -70,7 +71,7 @@ app.command("/scaslack-catfact", async ({ ack, respond }) => {
     );
 
     await respond({
-      text: "Failed to fetch a cat fact."
+      text: "Failed to fetch a cat fact.😭"
     });
   }
 });
@@ -89,7 +90,7 @@ app.command("/scaslack-joke", async ({ ack, respond }) => {
     );
 
     await respond({
-      text: `${response.data.setup}\n\n${response.data.punchline}`
+      text: `${response.data.setup}\n\n${response.data.punchline}╰(*°▽°*)╯`
     });
 
   } catch (err) {
