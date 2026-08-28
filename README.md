@@ -48,79 +48,78 @@ scroll down and turn **Enable Socket Mode** on
    <img width="793" height="389" alt="image" src="https://github.com/user-attachments/assets/7c0a8554-9c1c-410b-9161-b4806648446c" />
 </center>
 
+
 Socket Mode allows the bot to communicate with Slack using a WebSocket, meaning you don't need to host a public URL.
 
-### Create an App-Level Token
+### Create an App level token
 
-1. Go to **Basic Information**.
-2. Scroll down to **App-Level Tokens**.
-3. Click **Generate Token and Scopes**.
-4. Give the token a name, for example:
-   `scaslack-socket`
-5. Add the scope:
-   connections:write
-6. Click **Generate**.
-7. Copy the token. It starts with:
-   xapp-
+1.Go to **basic Information**
+2.Scroll down to **App-Level Tokens**
+3.Click **Generate Token and Scopes**
+4.Give the token a name , for example:
+`scaslack`
+5.Add a the scope:
+connections:write
+6.click **Generate**
+7.copy the token.It starts with:
+xapp-
 
-Keep this token private.
+**Keep this token private**
+
+<img width="544" height="377" alt="image" src="https://github.com/user-attachments/assets/542b7a7f-20b8-4d5a-a8e2-865135278754" />
+
 
 ## 3rd Step — Add Bot Permissions
 
-Go to **OAuth & Permissions**.
+Go to **OAuth & Permissions**
 
-Under **Bot Token Scopes**, add:
+under **Bot Token Scopes** add:
 
 chat:write
 commands
 app_mentions:read
 channels:history
 
-These permissions allow the bot to send messages, use slash commands, read mentions, and access channel messages.
+<img width="742" height="426" alt="image" src="https://github.com/user-attachments/assets/541730ce-a7d3-4ecb-90eb-97f65a85436c" />
+
+These permissions allow the bot to send messages , use slash commands, read mentions and access the channel history
 
 ## 4th Step — Install the App
 
-Go back to **OAuth & Permissions**.
+In  **OAuth & Permissions**
 
-Click **Install to Workspace** and approve the requested permissions.
+Click **Install to Workspace** and approve the requested permissions
 
-After installing, you will receive a **Bot User OAuth Token**.
+after that you will receive a **Bot User OAuth Token**
 
 It starts with:
-
 xoxb-
 
-Copy it and keep it private.
+copy it and keep it private
+
 
 ## 5th Step — Create the Slash Commands
 
-Go to **Slash Commands** in the left sidebar.
+Go to **Slash Commands**
 
-Click **Create New Command**.
+Click **Create New command**
 
-Create these commands:
+Create this commands:
 
-Command | Description
-/scaslack-ping | Check bot latency
-/scaslack-help | Show available commands
-/scaslack-catfact | Get a random cat fact
-/scaslack-joke | Get a random joke
-/scaslack-weather | Get weather information
-/scaslack-waifu | Get a random SFW anime image
+| commands | description |
+| --- | --- |
+| /scaslack-help |
+| /scaslack-ping |
+| /scaslack-catfact |
+| /scaslack-joke |
+| /scaslack-weather [City] |
+| /scaslack-waifu [character] |
 
-For the weather command, the user can enter a city after the command:
+> read the commands section to learn what each of them does
 
-/scaslack-weather Athens
+<img width="722" height="427" alt="image" src="https://github.com/user-attachments/assets/3baf0790-855b-499e-977e-1e0943c081fc" />
 
-For the waifu command, they can optionally enter a character:
 
-/scaslack-waifu Marin Kitagawa
-
-Or just:
-
-/scaslack-waifu
-
-to get a random SFW anime image.
 
 ## 6th Step — Create the `.env` File
 
