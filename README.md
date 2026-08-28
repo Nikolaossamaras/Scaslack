@@ -123,40 +123,129 @@ Create this commands:
 
 ## 6th Step — Create the `.env` File
 
-In the same folder as your JavaScript file, create a file called:
+In the same folder as your [JavaScript file](https://github.com/Nikolaossamaras/Scaslack/blob/main/index.js) , create a **.env** file
 
-.env
-
-Put your tokens and API key inside:
-
+Put your tokens and API key's inside like this:
+```text
 SLACK_BOT_TOKEN=xoxb-your-token
+
 SLACK_APP_TOKEN=xapp-your-token
+
 OPENWEATHER_API_KEY=your-openweather-key
+```
+**Never share these tokens or upload your `.env` file to GitHub or any other platform**
 
-**Never share these tokens or upload your `.env` file to GitHub.**
+In order for github to ignore the file you need to create a **.gitignore** file
 
-Your `.gitignore` should contain:
+Your **.gitignore** file must contain: 
+```text
+node_modules
 
 .env
-node_modules/
-
+```
 ## 7th Step — Install the Dependencies
 
 Open a terminal in your project folder and run:
 
-npm install @slack/bolt axios dotenv
+`npm install @slack/bolt axios dotenv`
 
 ## 8th Step — Run the Bot
 
 Start the bot with:
 
-node index.js
+`node index.js`
 
-If everything is configured correctly, you should see:
+> if you changed the javascript file name replace index with your new file name
 
-⚡ SCASLACK bot is running!
+If everything is done correctly you should see:
+
+`⚡ SCASLACK bot is running!`
+in the terminal
+
 
 Your bot should now be ready to use in Slack!
+
+# How to upload the bot to Nest
+## 1st step - SSH into the server
+Make sure you have a Nest account.
+
+SSH in with your credentials. You should land as root (your prompt will look like root@username:~#).
+
+## 2nd step - Connect to the server
+
+paste this command to the terminal:
+
+`ssh USER@SERVER`
+
+you can find your USER@SERVER here:
+
+<img width="731" height="320" alt="image" src="https://github.com/user-attachments/assets/b62f0f01-e081-499b-ab20-425d51706823" />
+
+## 3rd step - Check Node.js
+
+run this command to check your Node.js version
+
+`node –version` 
+
+if you don't have node.js installed run this command first:
+
+`winget install OpenJS.NodeJS.LTS`
+
+> this command install Node.js to your PC
+
+## 4th step - Check npm
+
+run this command to check your npm version
+
+`npm –version`
+
+## 5th step - Go to the bot folder
+
+run this command in order to go to your bot folder
+
+`cd ~/PROJECT_FOLDER`
+
+replace PROJECT_FOLDER with the name of your folder where the files for the bot are
+
+## 6th step - Install dependencies
+
+run this command to install npm
+
+`npm install`
+
+## 7th step - Start the bot with PM2
+
+run this command to start the bot
+
+`pm2 start npm –name “BOT_NAME” – start`
+
+replace BOT_Name with your bot's name
+
+## 8th step - Check PM2
+
+run this command to check PM2
+
+`pm2 status`
+
+## 9th step -Save the PM2 process list
+
+run this command to save PM2
+
+`pm2 save`
+
+## 10th step - Configure PM2 to start automatically after a reboot
+
+This will make the bot start even after the server has been rebooted
+
+`pm2 startup`
+
+## 11th step -  Run the command PM2 gives you
+
+the last command should give you a command which you need to run
+
+## 12th step - save again
+
+`pm2 save`
 
 # Credits
 
