@@ -7,14 +7,14 @@ Simply put it's a bot for slack that features diffrent commands in order to help
 
 # Commands
 
-| Command | Description |
+| commands | description |
 | --- | --- |
-| `/scaslack-ping` | Check the bot's latency |
-| `/scaslack-help` | Show all available commands |
-| `/scaslack-catfact` | Get a random cat fact |
-| `/scaslack-joke` | Get a random joke |
-| `/scaslack-weather [city]` | Get the current weather for a city |
-| `/scaslack-waifu [character]` | Get a random SFW anime image |
+| /scaslack-help | shows the commands that are available |
+| /scaslack-ping | Shows the latency of the bot |
+| /scaslack-catfact | Gives you a random fact about cats |
+| /scaslack-joke | Generates a random Joke |
+| /scaslack-weather [City] | Outputs the weather of the city you have inputted |
+| /scaslack-waifu [character] | Outputs a picture of the waifu (anime character) you have inputted , if you didn't then a random character will be generated |
 
 # Code
 
@@ -27,22 +27,25 @@ The bot uses:
 - **Waifu.im API** — for SFW anime images
 - **Cat Fact API** — for cat facts
 - **Official Joke API** — for random jokes
+- **Hackclub Nest
 
 # Setup
 
-## 1st Step — Create the Slack App
+## 1st Step — Create Slack app (bot)
 
-Go to the Slack Apps dashboard: https://api.slack.com/apps and click **Create New App → From scratch**.
+Go to the Slack Api app dashboard : https://api.slack.com/apps and click **Create New App -> From scratch**
 
-Give your app a name. I called mine **scaslack**.
+Give your app (bot) a name . I called mine scaslack
 
-Select the Slack workspace where you want to install the bot, then click **Create App**.
+Select the Slack workspace where you want to install the bot and then press **create app**
 
 ## 2nd Step — Enable Socket Mode
 
-Open **Socket Mode** from the left sidebar.
+Click **Socket Mode** from the left sidebar
 
-Turn **Enable Socket Mode** on.
+scroll down and turn **Enable Socket Mode** on
+
+<img width="793" height="389" alt="image" src="https://github.com/user-attachments/assets/7c0a8554-9c1c-410b-9161-b4806648446c" />
 
 Socket Mode allows the bot to communicate with Slack using a WebSocket, meaning you don't need to host a public URL.
 
