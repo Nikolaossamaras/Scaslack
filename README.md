@@ -44,7 +44,8 @@ Select the Slack workspace where you want to install the bot and then press **cr
 Click **Socket Mode** from the left sidebar
 
 scroll down and turn **Enable Socket Mode** on
-<center><img width="793" height="389" alt="image" src="https://github.com/user-attachments/assets/7c0a8554-9c1c-410b-9161-b4806648446c" />
+<center>
+   <img width="793" height="389" alt="image" src="https://github.com/user-attachments/assets/7c0a8554-9c1c-410b-9161-b4806648446c" />
 </center>
 
 Socket Mode allows the bot to communicate with Slack using a WebSocket, meaning you don't need to host a public URL.
