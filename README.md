@@ -7,8 +7,8 @@ Simply put it's a bot for slack that features diffrent commands in order to help
 
 # Commands
 
-| commands |
-| --- |
+| commands | Description |
+| --- | --- |
 | /scaslack-help | shows the commands that are available |
 | /scaslack-ping | Shows the latency of the bot |
 | /scaslack-catfact | Gives you a random fact about cats |
@@ -106,8 +106,8 @@ Click **Create New command**
 
 Create this commands:
 
-| commands | description |
-| --- | --- |
+| commands |
+| --- |
 | /scaslack-help |
 | /scaslack-ping |
 | /scaslack-catfact |
