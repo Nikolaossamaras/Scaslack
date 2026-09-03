@@ -18,7 +18,7 @@ app.command("/scaslack-ping", async ({ command, ack, respond }) => {
   const latency = Date.now() - start;
 
   await respond({
-    text: `Pong!\nLatency: ${latency}ms`
+    text: `Ping Pong!\nLatency: ${latency}ms`
   });
 });
 
