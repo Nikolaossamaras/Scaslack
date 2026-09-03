@@ -249,7 +249,7 @@ the last command should give you a command which you need to run
 
 # Credits
 
--[hackclub](https://hackclub.com) - orovided with guide to make the bot
+-[hackclub](https://hackclub.com) - provided with guide to make the bot
 
 # Licence
 This project is under the Mit Licence
