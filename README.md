@@ -159,7 +159,7 @@ Start the bot with:
 
 If everything is done correctly you should see:
 
-`⚡ SCASLACK bot is running!`
+`SCASLACK bot is running!`
 in the terminal
 
 
