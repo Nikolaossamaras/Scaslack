@@ -10,10 +10,6 @@ const app = new App({
 });
 
 
-// =========================
-// PING
-// =========================
-
 app.command("/scaslack-ping", async ({ command, ack, respond }) => {
   const start = Date.now();
 
@@ -27,9 +23,6 @@ app.command("/scaslack-ping", async ({ command, ack, respond }) => {
 });
 
 
-// =========================
-// HELP
-// =========================
 
 app.command("/scaslack-help", async ({ ack, respond }) => {
   await ack();
@@ -47,9 +40,6 @@ app.command("/scaslack-help", async ({ ack, respond }) => {
 });
 
 
-// =========================
-// CAT FACT
-// =========================
 
 app.command("/scaslack-catfact", async ({ ack, respond }) => {
   await ack();
@@ -60,7 +50,7 @@ app.command("/scaslack-catfact", async ({ ack, respond }) => {
     );
 
     await respond({
-      text: `Cat Fact:\n${response.data.fact}🙀`
+      text: `Cat Fact:\n${response.data.fact}`
     });
 
   } catch (err) {
@@ -71,15 +61,13 @@ app.command("/scaslack-catfact", async ({ ack, respond }) => {
     );
 
     await respond({
-      text: "Failed to fetch a cat fact.😭"
+      text: "Failed to fetch a cat fact."
     });
   }
 });
 
 
-// =========================
-// JOKE
-// =========================
+
 
 app.command("/scaslack-joke", async ({ ack, respond }) => {
   await ack();
@@ -106,10 +94,6 @@ app.command("/scaslack-joke", async ({ ack, respond }) => {
   }
 });
 
-
-// =========================
-// WEATHER
-// =========================
 
 app.command("/scaslack-weather", async ({ ack, respond, command }) => {
   await ack();
@@ -165,9 +149,7 @@ app.command("/scaslack-weather", async ({ ack, respond, command }) => {
   }
 });
 
-// =========================
-// WAIFU
-// =========================
+
 
 app.command("/scaslack-waifu", async ({ ack, respond, command }) => {
   await ack();
@@ -207,7 +189,7 @@ app.command("/scaslack-waifu", async ({ ack, respond, command }) => {
 
     if (!response.data.items || response.data.items.length === 0) {
       await respond({
-        text: `Couldn't find "${character}" 😭`
+        text: `Couldn't find "${character}" `
       });
       return;
     }
@@ -220,35 +202,32 @@ app.command("/scaslack-waifu", async ({ ack, respond, command }) => {
 
     await respond({
       text: character
-        ? `🌸 ${character}\n${randomImage.url}`
-        : `🌸 Random waifu\n${randomImage.url}`
+        ? ` ${character}\n${randomImage.url}`
+        : ` Random waifu\n${randomImage.url}`
     });
 
   } catch (err) {
 
-    console.error("❌ WAIFU ERROR");
+    console.error("WAIFU ERROR");
     console.error("Status:", err.response?.status);
     console.error("Data:", err.response?.data);
     console.error("Message:", err.message);
 
     await respond({
-      text: "Failed to fetch a waifu 😭"
+      text: "Failed to fetch a waifu "
     });
   }
 });
   
 
 
-// =========================
-// START BOT
-// =========================
 
 (async () => {
   try {
 
     await app.start();
 
-    console.log("⚡ SCASLACK bot is running!");
+    console.log(" SCASLACK bot is running!");
     console.log("OpenWeather key loaded:", !!process.env.OPENWEATHER_API_KEY);
     console.log("https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=" + process.env.OPENWEATHER_API_KEY);
 
