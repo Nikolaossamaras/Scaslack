@@ -92,3 +92,82 @@ app.command("/scaslack-weather", async ({ command, ack, say }) => {
     }
   }
 });
+
+
+app.command("/scaslack-waifu", async ({ ack, respond, command }) => {
+  await ack();
+
+  const character = command.text.trim();
+
+  try {
+    let response;
+
+    if (!character) {
+      // No character -> random SFW waifu
+      response = await axios.get(
+        "https://api.waifu.im/images",
+        {
+          params: {
+            IncludedTags: "waifu",
+            IsNsfw: false
+          }
+        }
+      );
+    }else{
+      const tag = character.toLowerCase().replace(/\s+/g, "-");
+      response=await axios.get(
+        "https://api.waifu.im/images",
+        {
+          params: {
+            IncludedTags: tag,
+            IsNsfw: false
+        }
+      }
+      );
+    }
+    if (!response.data.items  || response.data.item.lenght === 0){
+      await response({
+        text: `Couldn't find "${character}" `
+      });
+      return;
+    }
+    const randomImg = 
+    response.data.Items[
+      Math.floor(Math.random()*response.data.items.lenght)
+    ];
+    await respond({
+        text: character
+        ? ` ${character}\n${randomImage.url}`
+        : ` Random waifu\n${randomImage.url}`
+    })
+  }catch(err){
+          console.error("WAIFU ERROR");
+    console.error("Status:", err.response?.status);
+    console.error("Data:", err.response?.data);
+    console.error("Message:", err.message);
+
+    await respond({
+      text: "Failed to fetch a waifu "
+  });
+  }
+
+
+
+});
+
+
+(async () => {
+  try {
+
+    await app.start();
+
+    console.log(" SCASLACK bot is running!");
+    console.log("OpenWeather key loaded:", !!process.env.OPENWEATHER_API_KEY);
+    console.log("https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=" + process.env.OPENWEATHER_API_KEY);
+
+  } catch (err) {
+
+    console.error("Failed to start bot:", err);
+
+  }
+})();
